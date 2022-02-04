@@ -1,0 +1,59 @@
+html {
+	height: 100%;
+	background-image: linear-gradient(#5b446a,#906387);
+	box-sizing: border-box;
+}
+
+/*body{
+	box-sizing: border-box;
+	height: 99%;
+	justify-content: center;
+	align-items: center;
+}*/
+body {
+	box-sizing: border-box;
+	height: 99%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.hoverMe {
+	margin: auto;
+	font-family: 'Anton', sans-serif;
+	color: White;
+	font-size: 50px;
+}
+
+.hoverMe:hover {
+	font-size: 60px;
+	/*color: #ffee10;
+  	box-shadow: 0 0 5px #ffee10;
+	text-shadow: 0 0 5px #ffee10;*/
+    border: 5px solid white;
+}
+
+@keyframes floatup {
+ 	from {transform: translateY(0px);}
+	to {transform: translateY(-400px);}
+}
+
+#yuh:checked + .hoverMe {
+	animation: floatup 2s;
+	animation-fill-mode: forwards;
+	border: 0;
+	font-size: 60px;
+}
+
+.hideMe {
+	display: none;
+}
+
+#blocker {
+	z-index: 5;
+	position: absolute;
+	align-self: center;
+	width: 600px;
+	height: 100px;
+	transform: translateY(-400px);
+}

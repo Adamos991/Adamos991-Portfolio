@@ -1,5 +1,6 @@
 :root {
-	--mainColor:#eaeaea;
+	/*--mainColor:#eaeaea;*/
+	--mainColor: #5b446a;
 	--secondColor:#fff;
 
 	--borderCol: #c1c1c1;
@@ -11,7 +12,8 @@ html, body {
 }
 
 .sect1 {
-	background-color: var(--mainColor);
+	/*background-color: var(--mainColor);*/
+	background-image: linear-gradient(#5b446a,#906387);
 	border-bottom: 1px solid var(--borderCol);
 	overflow: auto;
 }
@@ -61,13 +63,17 @@ html, body {
 	grid-area:nav-wrap;
 	border-bottom: 1px solid var(--borderCol);
 	display: flex;
+
 	justify-content: space-between;
 	align-items: center;
+	background-color: #a070a1;
+
 }
 
 .corner-dots {
 	display: flex;
-	padding: 10px;
+	padding-left: 10px;
+	padding-right: 0px;
 }
 
 .browser-dot {
@@ -96,17 +102,29 @@ html, body {
 
 .left-col {
 	grid-area: left-col;
-	
+	margin: 0 auto;
 }
 
 .right-col {
 	grid-area: right-col;
+	border: 1px dashed red;
+}
+
+.page-title {
 	
 }
+#navigation {
+	padding-right: 10px;
+	padding-left: 50px;
+	align-self: center;
+}
+
+
 
 h1{
 	font-size: 56px;
 	font-weight: 400;
+	color: white;
 }
 
 @media screen and (max-width: 1200px) {

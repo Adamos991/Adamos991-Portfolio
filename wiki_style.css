@@ -1,0 +1,104 @@
+html, body {
+	padding: 0;
+	margin:0;
+	font-family: sans-serif;
+}
+
+html {
+	font-size: 100%;
+}
+
+.main-wrap {
+	display: grid;
+	grid-template-columns: 0.75fr 8fr;
+	grid-template-rows: 1fr 10fr;
+	grid-template-areas: 
+		'left-nav top-bar' 
+		'left-nav main-content'
+	;
+}
+
+.left-nav {
+	grid-area: left-nav;
+	background-color: red;
+	padding-left: 12px;
+	min-height: 1000px;
+	border-right: 1px solid grey;
+}
+.top-bar {
+	grid-area: top-bar;
+	border-bottom: 1px solid grey;
+} 
+
+.main-content {
+	grid-area: main-content;
+	background-color: yellow;
+	padding-left: 12px;
+	padding-right: 12px;
+}
+
+#logo {
+	margin: 0 auto;
+}
+
+#main-title {
+	font-size: 1.8em;
+	line-height: 1.3;
+	font-family: 'Linux';
+	border-bottom: 1px solid grey;
+}
+
+.sect1 {
+	/*overflow: auto;*/
+}
+
+.sect1-wrap {
+	display: block;
+	/*clear:both;*/
+	
+	/*grid-template-columns: 1.5fr 1fr;
+	grid-template-areas: 
+		'first-text table' 
+	;*/
+}
+
+.first-text {
+}
+
+.table {
+	float: right;
+	
+	margin: 0;
+	padding-top: 0;
+	overflow-y: hidden;
+}
+
+table {
+	box-sizing: border-box;
+	display: table;
+	border-collapse: separate;
+	text-indent: initial;
+	border-spacing: 3px;
+}
+
+.infobox {
+	border: 1px solid grey;
+	line-height: 1.5em;
+	font-size: 88%;
+	margin: 0.5em 0 0.5em 1em;
+    padding: 0.2em;
+    clear: right;
+    float:right;
+}
+
+#infobox-image {
+	text-align: center;
+}
+
+.infobox-head {
+
+}
+
+th {
+	display: table-cell;
+}

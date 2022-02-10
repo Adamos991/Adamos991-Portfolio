@@ -9,9 +9,13 @@
 html, body {
 	padding: 0;
 	margin:0;
+	scroll-behavior: smooth;
 }
 
-h1 { font-size: 56px;}
+h1 { 
+	font-size: 56px;
+	font-family: "Anton", sans-serif;
+}
 h2 { font-size: 36px;}
 h3 { font-size: 28px;}
 h4 { font-size: 24px;}
@@ -43,7 +47,7 @@ ul {
 .sect1 {
 	background-color: var(--mainColor);
 	/*background-image: linear-gradient(#5b446a,#906387);*/
-	border-bottom: 1px solid var(--borderCol);
+	/*border-bottom: 1px solid var(--borderCol);*/
 	overflow: auto;
 }
 
@@ -51,11 +55,15 @@ ul {
 	background-color: var(--secondColor);
 	border-bottom: 1px solid var(--borderCol);
 	overflow: auto;
+	align-content: center;
 }
+
+
 
 .content {
 	width: 1200px;
 	margin: 0 auto;
+	justify-content: center;
 }
 
 .name {
@@ -66,7 +74,6 @@ ul {
 	display: grid;
 	text-align: center;
 	min-height: 10em;
-	justify-content: center;
 	align-content: center;
 }
 
@@ -82,7 +89,6 @@ ul {
 
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 3em 35em;
 	grid-template-areas: 
 		'nav-wrap nav-wrap'
 		'left-col right-col' 
@@ -164,9 +170,9 @@ ul {
 }
 .right-col {
 	grid-area: right-col;
-	
 	display: grid;
 	align-content: center;
+	justify-content: center;
 }
 
 #navigation {
@@ -209,12 +215,133 @@ ul {
 #preview {
 	width: 300px;
 	border: 1px solid var(--borderCol);
-	background-color: rgb(26,26,26, 0.5);
+	/*background-color: rgb(26,26,26, 0.5);*/
+	background-color: rgb(31, 23, 34, 0.5);
 	padding: 15px;
+	position: relative;
+}
+
+#shadow {
+	background-color: #1f1722;
+	width: 300px;
+	height: 205px;
+	padding-left: 30px;
+	padding-top: 30px;
+}
+
+.corner {
+	width: 8px;
+	height: 8px;
+	/*border: 1.5px solid #17a2b8;*/
+	border: 1.5px solid var(--borderCol);
+	background-color: #fff;
+	position: absolute;
+	transform: rotate(45deg);
+}
+
+#tl {
+	top: -5px;
+	left: -5px;
+}
+
+#tr {
+	top: -5px;
+	right: -5px;
+}
+
+#br {
+	bottom: -5px;
+	right: -5px;
+}
+
+#bl {
+	bottom: -5px;
+	left: -5px;
 }
 
 @media screen and (max-width: 1200px) {
 	.content {
 		width: 95%;
 	}
+}
+
+@media screen and (max-width: 800px) {
+	.bio-wrap {
+		grid-template-columns: 1fr;
+		grid-template-areas: 
+			'nav-wrap'
+			'left-col'
+			'right-col'
+		;
+	}
+}
+/*--------------------------------------------------*/
+
+#buffer {
+	height: 18px;
+	background-color: var(--mainColor);
+	width: 100%;
+	border-bottom: 1px solid var(--borderCol);
+}
+
+.tabs {
+	position: relative;   
+	min-height: 200px; /* This part sucks */
+	clear: both;
+	margin: 25px 0;
+	max-width: 1200px;
+	border: 1px solid red;
+}
+.tab {
+  float: left;
+}
+.tab label {
+  background: #eee; 
+  padding: 10px; 
+  border: 1px solid #ccc; 
+  margin-left: -1px; 
+  position: relative;
+  left: 1px;
+  font-weight: bold;
+}
+.tab [type=radio] {
+  display: none;   
+}
+.tab-content {
+  position: absolute;
+  top: 28px;
+  left: 0;
+  background: white;
+  right: 0;
+  bottom: 0;
+  padding: 20px;
+  border: 1px solid #ccc;
+   
+}
+
+[type=radio]:checked ~ label {
+  background: white;
+  border-bottom: 1px solid white;
+  z-index: 2;
+}
+[type=radio]:checked ~ label ~ .tab-content {
+  z-index: 1;
+}
+.pos{
+	max-width: 1200;
+	justify-content: center;
+}
+
+.project-wrap {
+	display: grid;
+	text-align: center;
+	min-height: 10em;
+	align-content: center;
+}
+
+.proj {
+	font-size: 46px;
+	font-weight: 400;
+	color: white;
+	text-shadow: 2px 2px rgba(133,115,158, 0.5);
 }
